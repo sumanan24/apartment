@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="400" pageHeight="842" columnWidth="360" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b8eb9533-237b-4918-99ee-6094f4e9032d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="Name" class="java.lang.String"/>
+	<parameter name="ownerid" class="java.lang.String"/>
+	<parameter name="total" class="java.lang.String"/>
+	<parameter name="billno" class="java.lang.String"/>
+	<parameter name="date" class="java.lang.String"/>
+	<field name="details" class="java.lang.String"/>
+	<field name="amount" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="82" splitType="Stretch">
+			<staticText>
+				<reportElement x="85" y="0" width="175" height="31" uuid="eba8faea-44b2-44a3-ae41-5e2365850dce"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SV Apartment]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="63" y="31" width="211" height="20" uuid="a7c7248d-91f5-41d2-a711-3b983dc95e69"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Nelliyadi East, Point Pedro - Jafna]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="126" y="51" width="100" height="20" uuid="43e0cf8a-6d1a-4e88-a58b-ef3ffebada29"/>
+				<text><![CDATA[021 - 226 44 88]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="78" width="359" height="1" uuid="7507c747-2381-45c6-bb65-0f5ef9fc43c5"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="72" splitType="Stretch">
+			<textField>
+				<reportElement x="302" y="2" width="57" height="20" uuid="7bc9157a-d2bf-4199-bb09-58cf885a4b61"/>
+				<textFieldExpression><![CDATA[$P{billno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="78" y="2" width="100" height="20" uuid="93a856d4-789a-462f-88c2-f70525b8ab06"/>
+				<textFieldExpression><![CDATA[$P{Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="78" y="23" width="100" height="20" uuid="c5e789f7-095b-4183-ab6f-90f8b9e1dcfd"/>
+				<textFieldExpression><![CDATA[$P{ownerid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="78" y="44" width="100" height="20" uuid="7ca81d09-3340-43d1-950f-a6207068c082"/>
+				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="2" width="75" height="20" uuid="0406d723-e7ad-4543-af3b-a8782e988d8a"/>
+				<text><![CDATA[Name             :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="23" width="75" height="20" uuid="e122ee90-e38e-42ee-9b41-585f347e1e0a"/>
+				<text><![CDATA[Owner ID        :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="44" width="76" height="20" uuid="0a450a6e-0684-4d46-a2cf-7a30bb931d6a"/>
+				<text><![CDATA[Owner ID        :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="69" width="359" height="1" uuid="dd06d068-abcb-4707-afcf-658eb1032bf2"/>
+			</line>
+			<staticText>
+				<reportElement x="238" y="2" width="64" height="20" uuid="2556f945-11b1-4dc2-acd9-18a9a382290d"/>
+				<text><![CDATA[Bill No        :  ]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="30">
+			<staticText>
+				<reportElement x="16" y="4" width="100" height="20" uuid="9d2b2154-690d-44aa-9a0c-bef4f32ff8d1"/>
+				<text><![CDATA[Details]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="216" y="4" width="100" height="20" uuid="93ac9826-c9e4-400d-abd2-a2726d6ee1c8"/>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="26" width="359" height="1" uuid="dcf73f62-71da-48d1-94fc-82f5b18ef8cc"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="16" y="2" width="100" height="20" uuid="02cdfcb2-69c6-474a-9359-e84f3f3232f1"/>
+				<textFieldExpression><![CDATA[$F{details}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="216" y="2" width="100" height="20" uuid="e8bb07d3-5166-4366-b228-3cbf1e90f7c5"/>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="56" splitType="Stretch">
+			<line>
+				<reportElement x="1" y="31" width="359" height="1" uuid="52080724-9425-43d5-a741-83fa87d69266"/>
+			</line>
+			<textField>
+				<reportElement x="216" y="8" width="100" height="20" uuid="52f7a380-6a22-49d0-9bba-d4c6ed347c2d"/>
+				<textFieldExpression><![CDATA[$P{total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="4" y="34" width="174" height="20" uuid="0c044b09-1424-4ba4-86c4-cc6feff226be"/>
+				<text><![CDATA[Desinged By : Sumanan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="169" y="8" width="47" height="20" uuid="cb3c9cac-58af-4091-8224-43f1e802ac3a"/>
+				<text><![CDATA[Total    :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="4" width="359" height="1" uuid="46b911bd-fd8f-462a-a92d-85a3ec2e4884"/>
+			</line>
+		</band>
+	</columnFooter>
+</jasperReport>
